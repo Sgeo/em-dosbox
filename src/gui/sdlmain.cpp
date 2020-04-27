@@ -2081,7 +2081,7 @@ static void GUI_StartUp(Section * sec) {
 			}
 			if (exit_splash) break;
 #if defined(EMSCRIPTEN) && defined(EMTERPRETER_SYNC)
-			emscripten_sleep_with_yield(1);
+			emscripten_sleep(1);
 #endif
 
 			if (ct<1) {
@@ -2897,11 +2897,11 @@ int main(int argc, char* argv[]) {
 		canvasStyle.imageRendering = "crisp-edges";
 		canvasStyle.imageRendering = "pixelated";
 	);
-	if (emscripten_set_pointerlockchange_callback(NULL, NULL, true,
-	                                              em_pointerlock_callback)
-	    == EMSCRIPTEN_RESULT_SUCCESS) {
-		use_capture_callback = true;
-	}
+	//if (emscripten_set_pointerlockchange_callback(NULL, NULL, true,
+	//                                              em_pointerlock_callback)
+	//    == EMSCRIPTEN_RESULT_SUCCESS) {
+	//	use_capture_callback = true;
+	//}
 #endif
 
 	/* Display Welcometext in the console */

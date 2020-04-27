@@ -649,6 +649,8 @@ AS_IF([test "x$enable_emscripten" = "xyes"],[
   ])
 ])
 
+CXXFLAGS="$CXXFLAGS -Wno-narrowing"
+
 
 AC_CONFIG_FILES([ 
 Makefile
